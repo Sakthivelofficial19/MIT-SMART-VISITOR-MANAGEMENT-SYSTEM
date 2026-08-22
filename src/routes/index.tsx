@@ -56,11 +56,24 @@ export const Route = createFileRoute("/")({
 const MARQUEE =
   "★ Welcome to the Visitor Management System of MIT Chennai — Madras Institute of Technology, Chrompet ★ All visitors must carry a valid Government-issued photo ID ★ Registration is done at the main gate at the time of entry ★ Campus hours: 08:00 AM – 06:00 PM ★";
 
+const IST = "Asia/Kolkata";
+
 function todayISO() {
-  const d = new Date();
-  return `${d.getFullYear()}-${String(d.getMonth() + 1).padStart(2, "0")}-${String(
-    d.getDate(),
-  ).padStart(2, "0")}`;
+  return new Intl.DateTimeFormat("en-CA", {
+    timeZone: IST,
+    year: "numeric",
+    month: "2-digit",
+    day: "2-digit",
+  }).format(new Date());
+}
+
+function formatTime(date: Date) {
+  return new Intl.DateTimeFormat("en-IN", {
+    timeZone: IST,
+    hour: "2-digit",
+    minute: "2-digit",
+    hour12: true,
+  }).format(date);
 }
 
 function formatDate(iso: string) {
@@ -200,17 +213,9 @@ function VisitorRegistrationPage() {
       department: form.department,
       description: form.description,
       visitDate: formatDate(visitDate),
-      entryTime: now.toLocaleTimeString("en-IN", {
-        hour: "2-digit",
-        minute: "2-digit",
-        hour12: true,
-      }),
+      entryTime: formatTime(now),
       expectedExit: form.expectedExit
-        ? new Date(`${visitDate}T${form.expectedExit}`).toLocaleTimeString("en-IN", {
-            hour: "2-digit",
-            minute: "2-digit",
-            hour12: true,
-          })
+        ? formatTime(new Date(`${visitDate}T${form.expectedExit}:00+05:30`))
         : "Not declared",
       vehicle: form.byVehicle
         ? { type: form.vehicleType, reg: form.vehicleReg.toUpperCase(), model: form.vehicleModel }
