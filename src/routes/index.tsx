@@ -298,7 +298,7 @@ function VisitorRegistrationPage() {
                   <SelectField
                     id="idType"
                     value={form.idType}
-                    invalid={errors.idType}
+                    invalid={!!errors["idType"]}
                     onChange={(e) => set("idType", e.target.value)}
                   >
                     <option value="">— Select ID Type —</option>
@@ -317,7 +317,7 @@ function VisitorRegistrationPage() {
                     id="idNumber"
                     placeholder="ENTER ID NUMBER"
                     value={form.idNumber}
-                    invalid={errors.idNumber}
+                    invalid={!!errors["idNumber"]}
                     onChange={(e) => set("idNumber", e.target.value.toUpperCase())}
                   />
                 </div>
@@ -329,7 +329,7 @@ function VisitorRegistrationPage() {
                     id="fullName"
                     placeholder="e.g. Ramesh Kumar"
                     value={form.fullName}
-                    invalid={errors.fullName}
+                    invalid={!!errors["fullName"]}
                     onChange={(e) => set("fullName", e.target.value)}
                   />
                 </div>
@@ -348,7 +348,7 @@ function VisitorRegistrationPage() {
                       className="rounded-l-none"
                       placeholder="98400 00000"
                       value={form.contact}
-                      invalid={errors.contact}
+                      invalid={!!errors["contact"]}
                       onChange={(e) => set("contact", e.target.value.replace(/\D/g, ""))}
                     />
                   </div>
@@ -374,7 +374,7 @@ function VisitorRegistrationPage() {
                     rows={3}
                     placeholder="Door No., Street Name, Area / Locality"
                     value={form.address}
-                    invalid={errors.address}
+                    invalid={!!errors["address"]}
                     onChange={(e) => set("address", e.target.value)}
                   />
                 </div>
@@ -385,7 +385,7 @@ function VisitorRegistrationPage() {
                   <TextField
                     id="city"
                     value={form.city}
-                    invalid={errors.city}
+                    invalid={!!errors["city"]}
                     onChange={(e) => set("city", e.target.value)}
                   />
                 </div>
@@ -397,7 +397,7 @@ function VisitorRegistrationPage() {
                     <SelectField
                       id="state"
                       value={form.state}
-                      invalid={errors.state}
+                      invalid={!!errors["state"]}
                       onChange={(e) => set("state", e.target.value)}
                     >
                       {STATES.map((s) => (
@@ -417,7 +417,7 @@ function VisitorRegistrationPage() {
                       maxLength={6}
                       placeholder="600 044"
                       value={form.pin}
-                      invalid={errors.pin}
+                      invalid={!!errors["pin"]}
                       onChange={(e) => set("pin", e.target.value.replace(/\D/g, ""))}
                     />
                   </div>
@@ -435,7 +435,7 @@ function VisitorRegistrationPage() {
                   <SelectField
                     id="purpose"
                     value={form.purpose}
-                    invalid={errors.purpose}
+                    invalid={!!errors["purpose"]}
                     onChange={(e) => set("purpose", e.target.value)}
                   >
                     <option value="">— Select Purpose —</option>
@@ -467,7 +467,7 @@ function VisitorRegistrationPage() {
                   <SelectField
                     id="department"
                     value={form.department}
-                    invalid={errors.department}
+                    invalid={!!errors["department"]}
                     onChange={(e) => set("department", e.target.value)}
                   >
                     <option value="">— Select Department / Block —</option>
@@ -650,7 +650,7 @@ function VisitorRegistrationPage() {
                       <SelectField
                         id="vehicleType"
                         value={form.vehicleType}
-                        invalid={errors.vehicleType}
+                        invalid={!!errors["vehicleType"]}
                         onChange={(e) => set("vehicleType", e.target.value)}
                       >
                         <option value="">— Select Vehicle Type —</option>
@@ -669,7 +669,7 @@ function VisitorRegistrationPage() {
                         id="vehicleReg"
                         placeholder="TN 01 AB 1234"
                         value={form.vehicleReg}
-                        invalid={errors.vehicleReg}
+                        invalid={!!errors["vehicleReg"]}
                         onChange={(e) => set("vehicleReg", e.target.value.toUpperCase())}
                       />
                       <Hint>

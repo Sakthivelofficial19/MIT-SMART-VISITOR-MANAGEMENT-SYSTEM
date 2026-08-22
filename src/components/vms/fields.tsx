@@ -31,7 +31,7 @@ export function TextField({
   invalid,
   className = "",
   ...props
-}: InputHTMLAttributes<HTMLInputElement> & { invalid?: boolean }) {
+}: InputHTMLAttributes<HTMLInputElement> & { invalid?: boolean | undefined }) {
   return (
     <input
       {...props}
@@ -43,7 +43,7 @@ export function TextField({
 export function TextArea({
   invalid,
   ...props
-}: TextareaHTMLAttributes<HTMLTextAreaElement> & { invalid?: boolean }) {
+}: TextareaHTMLAttributes<HTMLTextAreaElement> & { invalid?: boolean | undefined }) {
   return <textarea {...props} className={`${fieldBase} ${invalid ? "border-brand" : ""}`} />;
 }
 
@@ -51,7 +51,7 @@ export function SelectField({
   invalid,
   children,
   ...props
-}: SelectHTMLAttributes<HTMLSelectElement> & { invalid?: boolean }) {
+}: SelectHTMLAttributes<HTMLSelectElement> & { invalid?: boolean | undefined }) {
   return (
     <select
       {...props}
