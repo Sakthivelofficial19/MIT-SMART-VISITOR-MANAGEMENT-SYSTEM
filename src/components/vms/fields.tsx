@@ -29,9 +29,15 @@ export function Hint({ children }: { children: ReactNode }) {
 
 export function TextField({
   invalid,
+  className = "",
   ...props
 }: InputHTMLAttributes<HTMLInputElement> & { invalid?: boolean }) {
-  return <input {...props} className={`${fieldBase} ${invalid ? "border-brand" : ""}`} />;
+  return (
+    <input
+      {...props}
+      className={`${fieldBase} ${invalid ? "border-brand" : ""} ${className}`}
+    />
+  );
 }
 
 export function TextArea({

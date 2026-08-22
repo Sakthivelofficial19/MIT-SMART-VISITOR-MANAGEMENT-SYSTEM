@@ -340,6 +340,7 @@ function VisitorRegistrationPage() {
                       id="contact"
                       inputMode="numeric"
                       maxLength={10}
+                      className="rounded-l-none"
                       placeholder="98400 00000"
                       value={form.contact}
                       invalid={errors.contact}
