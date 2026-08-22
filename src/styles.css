@@ -182,3 +182,16 @@
     color: var(--color-foreground);
   }
 }
+
+body {
+  font-family: var(--font-sans);
+}
+
+@media print {
+  @page {
+    margin: 12mm;
+  }
+  body {
+    background: #fff;
+  }
+}
