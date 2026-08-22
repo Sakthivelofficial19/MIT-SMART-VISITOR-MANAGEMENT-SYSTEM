@@ -161,13 +161,37 @@
   --sidebar-ring: oklch(0.551 0.027 264.364);
 }
 
+@keyframes marquee {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-50%);
+  }
+}
+
 @layer base {
   * {
     border-color: var(--color-border);
   }
 
+
+
   body {
     background-color: var(--color-background);
     color: var(--color-foreground);
+  }
+}
+
+body {
+  font-family: var(--font-sans);
+}
+
+@media print {
+  @page {
+    margin: 12mm;
+  }
+  body {
+    background: #fff;
   }
 }
