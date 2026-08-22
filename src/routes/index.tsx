@@ -50,7 +50,7 @@ export const Route = createFileRoute("/")({
       },
     ],
   }),
-  component: VisitorRegistrationPage;
+  component: VisitorRegistrationPage,
 });
 
 const MARQUEE =
