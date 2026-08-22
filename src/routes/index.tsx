@@ -184,8 +184,8 @@ function VisitorRegistrationPage() {
     required.forEach((key) => {
       if (!String(form[key]).trim()) next[key] = true;
     });
-    if (!/^[0-9]{10}$/.test(form.contact.replace(/\D/g, "").slice(-10))) next.contact = true;
-    if (!/^[0-9]{6}$/.test(form.pin)) next.pin = true;
+    if (!/^[0-9]{10}$/.test(form.contact.replace(/\D/g, "").slice(-10))) next["contact"] = true;
+    if (!/^[0-9]{6}$/.test(form.pin)) next["pin"] = true;
     setErrors(next);
 
     if (!photo) setPhotoError("Visitor photograph is required before submitting.");
