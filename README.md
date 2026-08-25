@@ -1,4 +1,5 @@
 # 🏫 Smart Campus Visitor Management System (VMS)
+[live website - https://mit-smart-visitor-management.vercel.app/ ]
 
 A digital visitor management solution designed for college/campus entry gates that replaces manual visitor registers with a fast, secure, and trackable digital check-in/check-out process — complete with QR-based passes, WhatsApp notifications, and in-campus navigation for visitors.
 
